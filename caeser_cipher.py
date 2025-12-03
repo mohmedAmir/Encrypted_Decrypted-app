@@ -32,6 +32,8 @@ class CaesarCipher:
 
 
 # Run Caesar Cipher Program
+
+'''
 def run_program():
     cipher = CaesarCipher()
 
@@ -60,3 +62,5 @@ def run_program():
 
 if __name__ == "__main__":
     run_program()
+'''
+# The run_program function is commented out to avoid execution during imports.
