@@ -31,7 +31,7 @@ The app provides a **menu-based interface** where users can easily choose the ci
 1. **Clone this repository:**
 
 ```
-git clone https://github.com/<your-username>/Encrypted_Decrypted-app.git
+git clone https://github.com/mohmedAmir/Encrypted_Decrypted-app.git
 ```
 
 2. **Navigate into the project folder:**
