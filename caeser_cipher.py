@@ -29,38 +29,4 @@ class CaesarCipher:
             else:
                 decrypted_text.append(char)
         return ''.join(decrypted_text)
-
-
-# Run Caesar Cipher Program
-
-'''
-def run_program():
-    cipher = CaesarCipher()
-
-    print("===== Caesar Cipher Program =====")
-    print("1. Encrypt a message")
-    print("2. Decrypt a message")
-    print("=================================")
-
-    choice = input("Choose an option (1 or 2): ")
-
-    if choice == "1":
-        plaintext = input("Enter the message to encrypt: ")
-        shift = int(input("Enter the shift value: "))
-        result = cipher.encrypt_caesar_cipher(plaintext, shift)
-        print("Encrypted message:", result)
-
-    elif choice == "2":
-        ciphertext = input("Enter the message to decrypt: ")
-        shift = int(input("Enter the shift value: "))
-        result = cipher.decrypt_caesar_cipher(ciphertext, shift)
-        print("Decrypted message:", result)
-
-    else:
-        print("Invalid choice. Please select 1 or 2.")
-
-
-if __name__ == "__main__":
-    run_program()
-'''
-# The run_program function is commented out to avoid execution during imports.
+    
