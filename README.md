@@ -1,71 +1,136 @@
-#  Encrypted_Decrypted-app
+# **Encrypted_Decrypted-app**
 
-A simple and user-friendly Python application that allows you to **Encrypt** and **Decrypt** messages using the **Caesar Cipher** technique.  
-The app provides a clean menu interface where users can choose between encryption and decryption easily.
+A simple and user-friendly Python application that allows you to **Encrypt** and **Decrypt** messages using either the **Caesar Cipher** or **Symmetric Cipher (Fernet)**.
+The app provides a **menu-based interface** where users can easily choose the cipher type and operation.
 
-## Features
+---
 
-- Encrypt plaintext using Caesar Cipher  
-- Decrypt ciphertext back to original message  
-- Supports uppercase and lowercase letters  
-- Preserves spaces, numbers, and punctuation  
-- Menu-based interface for easy operation  
-- Simple and beginner-friendly code  
+## **Features**
 
+* **Caesar Cipher:**
 
-##  Installation
+  * Encrypt plaintext by shifting letters
+  * Decrypt ciphertext back to the original message
+  * Supports uppercase and lowercase letters
+  * Preserves spaces, numbers, and punctuation
 
-1. Clone this repository:
+* **Symmetric Cipher (Fernet AES 128-bit):**
+
+  * Encrypt and decrypt messages securely
+  * Automatically generates encryption key
+  * Prints key and encrypted message in copy-friendly format (no `b''`)
+
+* Menu-based interface for easy operation
+
+* Simple and beginner-friendly Python code
+
+---
+
+## **Installation**
+
+1. **Clone this repository:**
 
 ```
-git clone https://github.com/your-username/Encrypted_Decrypted-app.git
-
+git clone https://github.com/mohmedAmir/Encrypted_Decrypted-app.git
 ```
-## Navigate into the project folder:
+
+2. **Navigate into the project folder:**
+
 ```
 cd Encrypted_Decrypted-app
 ```
 
-## Run the Python program:
+3. **(Optional) Create and activate a Python virtual environment:**
+
+### Windows (PowerShell):
+
 ```
-python caesar.py
+python -m venv venv
+.\venv\Scripts\Activate.ps1
 ```
-# How It Works
 
-## This app uses the classic Caesar Cipher, which shifts letters in the alphabet by a chosen value.
+### macOS/Linux:
 
-# Example:
 ```
-Plaintext:  Hello
-Shift:      3
-Ciphertext: Khoor
+python3 -m venv venv
+source venv/bin/activate
 ```
-# Usage
 
-## When you run the program, you will see:
+4. **Install required libraries (for Symmetric Cipher):**
+
 ```
-===== Caesar Cipher Program =====
-1. Encrypt a message
-2. Decrypt a message
-=================================
-Choose an option (1 or 2):
+pip install cryptography
 ```
-# Encrypting
 
-## Choose 1
+---
 
-Enter your message
+## **Running the Program**
 
-Enter shift value
+Run the main program:
 
-# Decrypting
+```
+python main.py
+```
 
-## Choose 2
+You will see a menu like this:
 
-Enter encrypted text
+```
+===== Encryption/Decryption Program =====
+Select cipher type:
+1. Caesar Cipher
+2. Symmetric Cipher (Fernet)
+========================================
+Choose an option:
+```
 
-Enter shift value
+## **Usage Examples**
 
-Enter encrypted text
+### **1. Caesar Cipher**
 
-Enter shift value
+* Choose `1` for Caesar Cipher
+* **Encrypting a message:**
+
+```
+Enter your message: Hello 
+Enter shift value: 3
+Encrypted message: Khoor
+```
+
+* **Decrypting a message:**
+
+```
+Enter encrypted message: Khoor 
+Enter shift value: 3
+Decrypted message: Hello
+```
+
+---
+
+### **2. Symmetric Cipher (Fernet)**
+
+* Choose `2` for Symmetric Cipher
+* **Encrypting a message:**
+
+```
+Enter your message: Hello world
+Encrypted message: gAAAAABlZ...
+Encryption key: R8IeyTp7BhqZICGGcDzJD9E0txcld105-G8kbGWiBY8=
+```
+
+* **Decrypting a message:**
+
+```
+Enter the encryption key: R8IeyTp7BhqZICGGcDzJD9E0txcld105-G8kbGWiBY8=
+Enter the message to decrypt: gAAAAABlZ...
+Decrypted message: Hello world
+```
+
+> ## The key and encrypted message are printed **without `b''`** so they are easy to copy and paste.
+
+---
+
+## **Notes**
+
+* Always save the **encryption key** when using Symmetric Cipher; losing it means you cannot decrypt the message.
+* Caesar Cipher only shifts letters; spaces, numbers, and punctuation remain unchanged.
+* Shift values can be any integer. Positive numbers shift to the right, negative numbers shift to the left.
