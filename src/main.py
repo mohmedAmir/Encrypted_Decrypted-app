@@ -1,7 +1,7 @@
-from caeser_cipher import CaesarCipher
-from symmetric import SymmetricCipher
-from asymmetric import AsymmetricCipher
-from file_cipher import FileCipher
+from src.caeser_cipher import CaesarCipher
+from src.symmetric import SymmetricCipher
+from src.asymmetric import AsymmetricCipher
+from src.file_cipher import FileCipher
 import base64
 
 
@@ -152,9 +152,9 @@ def run_program():
         if choice == "1":
             filepath = input("Enter the path of the file to encrypt: ")
             key = file_cipher.generate_key()
-            encrypted_file = file_cipher.encrypt_file(filepath, key)
+            encrypted_file = file_cipher.encrypt_file(filepath, cipher)
             print(f"File encrypted: {encrypted_file}")
-            print(f"Encryption key: {key.decode()}")
+            print(f"Encryption key: {cipher}")
 
         elif choice == "2":
             filepath = input("Enter the path of the file to decrypt: ")
