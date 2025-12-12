@@ -1,6 +1,7 @@
 from caeser_cipher import CaesarCipher
 from symmetric import SymmetricCipher
 from asymmetric import AsymmetricCipher
+from file_cipher import FileCipher
 import base64
 
 
@@ -10,7 +11,8 @@ def run_program():
     print("1. Caesar Cipher")
     print("2. Symmetric Encryption (Fernet)")
     print("3. Asymmetric Encryption (RSA)")
-    choice_type = input("Enter your choice (1, 2, or 3): ")
+    print("4. File Encryption/Decryption (Fernet)")
+    choice_type = input("Enter your choice (1, 2, 3, or 4): ")
 
     # ---------------------------
     # 1. Caesar Cipher
@@ -135,6 +137,36 @@ def run_program():
             except Exception as e:
                 print("Error decrypting message:", e)
 
+
+    # ---------------------------
+    # 4. File Encryption/Decryption (Fernet)
+    # ---------------------------   
+    elif choice_type == "4":
+        print("\n--- File Encryption/Decryption (Fernet) ---")
+        print("1. Encrypt a file")
+        print("2. Decrypt a file")
+        choice = input("Choose an option (1 or 2): ")
+
+        file_cipher = FileCipher()
+
+        if choice == "1":
+            filepath = input("Enter the path of the file to encrypt: ")
+            key = file_cipher.generate_key()
+            encrypted_file = file_cipher.encrypt_file(filepath, key)
+            print(f"File encrypted: {encrypted_file}")
+            print(f"Encryption key: {key.decode()}")
+
+        elif choice == "2":
+            filepath = input("Enter the path of the file to decrypt: ")
+            key = input("Enter the encryption key: ").encode()
+            try:
+                decrypted_file = file_cipher.decrypt_file(filepath, key)
+                print(f"File decrypted: {decrypted_file}")
+            except Exception as e:
+                print("Error decrypting file:", e)
+
+        else:
+            print("Invalid choice.")
 
     else:
         print("Invalid encryption type.")
