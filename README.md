@@ -1,48 +1,61 @@
 # Encrypted_Decrypted-app
 
-A simple and user-friendly Python application that allows you to Encrypt and Decrypt messages using Caesar Cipher, Symmetric Cipher (Fernet), or Asymmetric Cipher (RSA).
-The app provides a menu-based interface for easy selection of cipher type and operation.
+**Encrypted_Decrypted-app** is a Python-based application designed to provide **easy, secure, and versatile encryption and decryption** options for both messages and files.  
+It is suitable for beginners learning about cryptography as well as users who want a simple tool to protect sensitive data.
 
-# Features
+The project supports multiple encryption methods:
 
-## Caesar Cipher:
+- **Caesar Cipher:** A classic, simple letter-shifting cipher for basic text obfuscation.  
+- **Symmetric Cipher (Fernet AES 128-bit):** Modern symmetric encryption for secure message and file protection.  
+- **Asymmetric Cipher (RSA 2048-bit):** Public/private key encryption for secure message exchange.  
+- **File Encryption/Decryption (Fernet):** Encrypt and decrypt files while preserving the original file format.
 
-Encrypt plaintext by shifting letters
+**Purpose of the project:**
 
-Decrypt ciphertext back to the original message
+- Demonstrates different encryption techniques in one application.
+- Provides hands-on experience with both classical and modern cryptography.
+- Offers a practical tool to encrypt messages and files securely.
+- Ensures copy-friendly handling of keys and encrypted data for easy sharing.
 
-Supports uppercase and lowercase letters
+The app provides a **menu-driven interface**, allowing users to choose the type of encryption and operation without prior programming experience.
 
-Preserves spaces, numbers, and punctuation
+---
 
-## Symmetric Cipher (Fernet AES 128-bit):
+## Features
+...
 
-Encrypt and decrypt messages securely
 
-Automatically generates encryption key
+### 1. Caesar Cipher
+- Encrypt plaintext by shifting letters
+- Decrypt ciphertext back to the original message
+- Supports uppercase and lowercase letters
+- Preserves spaces, numbers, and punctuation
 
-Prints key and encrypted message in copy-friendly format (no b'')
+### 2. Symmetric Cipher (Fernet AES 128-bit)
+- Encrypt and decrypt messages securely
+- Automatically generates encryption key
+- Prints key and encrypted message in copy-friendly format (no `b''`)
 
-## Asymmetric Cipher (RSA 2048-bit):
+### 3. Asymmetric Cipher (RSA 2048-bit)
+- Generate RSA public/private key pair
+- Encrypt messages using the public key
+- Decrypt messages using the private key
+- Messages are encoded in Base64 for safe copy/paste
 
-Generate RSA public/private key pair
+### 4. File Encryption/Decryption (Fernet)
+- Encrypt and decrypt files using a generated key
+- Preserves the original file format after decryption
+- Uses symmetric Fernet encryption for simplicity and security
 
-Encrypt messages using the public key
+---
 
-Decrypt messages using the private key
+## Installation
 
-Messages are encoded in Base64 for safe copy/paste
+1. Clone this repository:
 
-Menu-based interface for easy operation
-
-Beginner-friendly Python code
-
-# Installation
-
-Clone this repository:
-```
+```bash
 git clone https://github.com/mohmedAmir/Encrypted_Decrypted-app.git
-```
+
 
 Navigate into the project folder:
 ```
@@ -74,13 +87,13 @@ python main.py
 ```
 
 You will see a menu like this:
-```
 ===== Encrypted_Decrypted-app =====
 Choose encryption type:
 1. Caesar Cipher
 2. Symmetric Encryption (Fernet)
 3. Asymmetric Encryption (RSA)
-Enter your choice (1, 2, or 3):
+4. File Encryption/Decryption (Fernet)
+Enter your choice (1, 2, 3, or 4):
 ```
 ## Usage Examples:
 
@@ -161,7 +174,23 @@ Enter Base64 encrypted message: Ih9VOP/TnwWE3ZkGEIKztsfND/D7aK0bHUBL1dv5xGvo6uKo
 Decrypted message: Hello RSA
 ```
 
-### Messages are Base64 encoded for safe copy/paste.
+# File Encryption/Decryption (Fernet)
+
+Choose 4
+
+## 1.Encrypt a file:
+```
+Enter the path of the file to encrypt:  C:\Users\desktop\example.txt
+File encrypted:   C:\Users\desktop\example.txt.encrypted
+Encryption key: R8IeyTp7BhqZICGGcDzJD9E0txcld105-G8kbGWiBY8=
+```
+## 2.Decrypt a file:
+```
+Enter the path of the file to decrypt: C:\Users\desktop\example.txt.encrypted
+Enter the encryption key: R8IeyTp7BhqZICGGcDzJD9E0txcld105-G8kbGWiBY8=
+File decrypted:  C:\Users\desktop\example.txt
+```
+### make sure that you copy the file path without " "
 
 # Notes
 
