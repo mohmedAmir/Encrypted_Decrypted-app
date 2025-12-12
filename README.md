@@ -20,6 +20,21 @@ The project supports multiple encryption methods:
 The app provides a **menu-driven interface**, allowing users to choose the type of encryption and operation without prior programming experience.
 
 ---
+## **Project Structure**
+```
+Encrypted_Decrypted-app/
+│
+├── src/
+│ ├── main.py # Main program
+│ ├── caeser_cipher.py # Caesar Cipher encryption
+│ ├── symmetric.py # Symmetric encryption (Fernet)
+│ ├── asymmetric.py # Asymmetric encryption (RSA)
+│ └── file_cipher.py # File encryption/decryption
+│
+├── run.py # Easy way to run the application
+├── requirements.txt # External dependencies
+└── README.md
+```
 
 ## Features
 ...
@@ -77,13 +92,14 @@ source venv/bin/activate
 
 Install required libraries:
 ```
-pip install cryptography
+pip install -r requirements.txt
 ```
 Running the Program
 
-Run the main program:
+Run the program:
 ```
-python main.py
+python run.py
+
 ```
 
 ### You will see a menu like this:
