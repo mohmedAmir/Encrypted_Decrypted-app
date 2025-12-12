@@ -53,9 +53,9 @@ The app provides a **menu-driven interface**, allowing users to choose the type 
 
 1. Clone this repository:
 
-```bash
+```
 git clone https://github.com/mohmedAmir/Encrypted_Decrypted-app.git
-
+```
 
 Navigate into the project folder:
 ```
@@ -86,7 +86,8 @@ Run the main program:
 python main.py
 ```
 
-You will see a menu like this:
+### You will see a menu like this:
+```
 ===== Encrypted_Decrypted-app =====
 Choose encryption type:
 1. Caesar Cipher
