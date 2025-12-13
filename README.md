@@ -9,6 +9,8 @@ The project supports multiple encryption methods:
 - **Symmetric Cipher (Fernet AES 128-bit):** Modern symmetric encryption for secure message and file protection.  
 - **Asymmetric Cipher (RSA 2048-bit):** Public/private key encryption for secure message exchange.  
 - **File Encryption/Decryption (Fernet):** Encrypt and decrypt files while preserving the original file format.
+- **GUI Interface:** A Tkinter-based graphical interface for easy interaction.
+- **Test Cases:** Pytest-based automated tests to ensure reliability and correctness of all encryption/decryption functions.
 
 **Purpose of the project:**
 
@@ -25,14 +27,22 @@ The app provides a **menu-driven interface**, allowing users to choose the type 
 Encrypted_Decrypted-app/
 │
 ├── src/
-│ ├── main.py # Main program
-│ ├── caeser_cipher.py # Caesar Cipher encryption
-│ ├── symmetric.py # Symmetric encryption (Fernet)
-│ ├── asymmetric.py # Asymmetric encryption (RSA)
-│ └── file_cipher.py # File encryption/decryption
+│   ├── main.py               # Main CLI program
+│   ├── caeser_cipher.py     
+│   ├── symmetric.py          
+│   ├── asymmetric.py        
+│   └── file_cipher.py       
 │
-├── run.py # Easy way to run the application
-├── requirements.txt # External dependencies
+├── gui_app.py                # Tkinter GUI application
+├── run.py                    
+├── tests/                   
+│   ├── test_caesar.py
+│   ├── test_symmetric.py
+│   ├── test_asymmetric.py
+│   └── test_file_cipher.py
+├── fixtures/                
+│   ├── sample.txt
+├── requirements.txt         
 └── README.md
 ```
 
@@ -61,6 +71,24 @@ Encrypted_Decrypted-app/
 - Encrypt and decrypt files using a generated key
 - Preserves the original file format after decryption
 - Uses symmetric Fernet encryption for simplicity and security
+
+### 5. GUI (Graphical User Interface)
+
+- Choose encryption type using dropdown
+
+- Enter messages, keys, or select files
+
+- Encrypt/Decrypt with a single button click
+
+- Supports all encryption types (Caesar, Symmetric, Asymmetric, File)
+
+### 6. Test Cases
+
+- Automated unit tests using pytest
+
+- Covers all encryption/decryption modules
+
+- Includes sample files for file encryption testing
 
 ---
 
@@ -94,7 +122,38 @@ Install required libraries:
 ```
 pip install -r requirements.txt
 ```
-Running the Program
+# Running the Application
+
+The Encrypted_Decrypted-app can be run either via the**Command-Line Interface (CLI)** or the **Graphical User Interface (GUI)**.
+
+## Running via GUI
+
+The GUI version provides a user-friendly interface to perform encryption and decryption without using the terminal.
+```
+python  -m src.gui_app
+
+```
+Steps:
+
+- A window will open where you can select the encryption type from a dropdown menu:
+
+- Caesar, Symmetric, Asymmetric, or File
+
+- Enter your message or select a file.
+
+- Enter the key/shift if required.
+
+- Click Encrypt or Decrypt.
+
+- The result will be displayed in the text area below the buttons.
+
+- For Asymmetric Encryption, you can generate a new RSA key pair using the “Generate RSA Keys” button.
+
+# Running the Application
+
+## Running via CLI
+
+The CLI version allows you to encrypt and decrypt messages and files using a menu-driven interface
 
 Run the program:
 ```
@@ -209,7 +268,26 @@ File decrypted:  C:\Users\desktop\example.txt
 ```
 ### make sure that you copy the file path without " "
 
+# Running Test Cases
+
+### Ensure you have pytest installed:
+```
+pip install pytest
+
+```
+
+Run all tests:
+```
+pytest -v
+```
+
+- Tests are located in the tests/ folder.
+
+
 # Notes
+Make sure to save the encryption keys, especially for Symmetric and Asymmetric encryption, to be able to decrypt messages or files later.
+
+The CLI and GUI use the same underlying encryption logic, so results are consistent across both interfaces.
 
 Always save the encryption key for Symmetric Cipher; losing it means you cannot decrypt the message.
 
