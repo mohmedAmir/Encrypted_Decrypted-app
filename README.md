@@ -20,10 +20,6 @@ The project supports multiple encryption methods:
 The app provides a **menu-driven interface**, allowing users to choose the type of encryption and operation without prior programming experience.
 
 ---
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> origin/main
 ## **Project Structure**
 ```
 Encrypted_Decrypted-app/
@@ -39,11 +35,6 @@ Encrypted_Decrypted-app/
 ├── requirements.txt # External dependencies
 └── README.md
 ```
-<<<<<<< HEAD
-=======
->>>>>>> f3432b7127d05c9c6ccf953233b7dc9a0e286108
-=======
->>>>>>> origin/main
 
 ## Features
 ...
