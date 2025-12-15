@@ -1,7 +1,7 @@
 # gui_app.py
 import tkinter as tk
 from tkinter import filedialog, messagebox
-
+from cryptography.fernet import Fernet
 from src.caeser_cipher import CaesarCipher
 from src.symmetric import SymmetricCipher
 from src.asymmetric import AsymmetricCipher
@@ -111,7 +111,7 @@ class EncryptionApp:
             self.message_text.pack()
             self.label_key.pack()
             self.key_entry.pack()
-            self.generate_keys_button.pack(pady=5)   # 👈 هنا الزر
+            self.generate_keys_button.pack(pady=5)  
             self.encrypt_button.pack(pady=5)
             self.decrypt_button.pack(pady=5)
 
@@ -177,9 +177,18 @@ class EncryptionApp:
             elif enc_type == "File":
                 if not self.selected_file:
                     raise ValueError("Please select a file first.")
+
                 file_cipher = FileCipher()
-                key = file_cipher.encrypt_file(self.selected_file)
-                result = f"File encrypted successfully.\n\nKey:\n{key}"
+                key = Fernet.generate_key() 
+                encrypted_file = file_cipher.encrypt_file(self.selected_file, key)
+
+                result = (
+                    f"File encrypted successfully!\n"
+                    f"Encrypted file: {encrypted_file}\n"
+                    f"Key: {key.decode()}"
+                )
+
+
 
             self.result_text.delete("1.0", tk.END)
             self.result_text.insert(tk.END, result)
@@ -216,9 +225,11 @@ class EncryptionApp:
             elif enc_type == "File":
                 if not self.selected_file or not key:
                     raise ValueError("File and key are required.")
+
                 file_cipher = FileCipher()
-                file_cipher.decrypt_file(self.selected_file, key.encode())
-                result = "File decrypted successfully."
+                decrypted_file = file_cipher.decrypt_file(self.selected_file, key.encode())
+
+                result = f"File decrypted successfully!\nDecrypted file: {decrypted_file}"
 
             self.result_text.delete("1.0", tk.END)
             self.result_text.insert(tk.END, result)
@@ -231,3 +242,4 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = EncryptionApp(root)
     root.mainloop()
+
