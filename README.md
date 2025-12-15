@@ -34,7 +34,7 @@ Encrypted_Decrypted-app/
 │   └── file_cipher.py       
 │
 ├── gui_app.py                # Tkinter GUI application
-├── run.py                    
+├── run.py                    Run the CLI program
 ├── tests/                   
 │   ├── test_caesar.py
 │   ├── test_symmetric.py
@@ -130,7 +130,7 @@ The Encrypted_Decrypted-app can be run either via the**Command-Line Interface (C
 
 The GUI version provides a user-friendly interface to perform encryption and decryption without using the terminal.
 ```
-python  -m src.gui_app
+python gui_app.py
 
 ```
 Steps:
