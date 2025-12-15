@@ -34,7 +34,7 @@ Encrypted_Decrypted-app/
 │   └── file_cipher.py       
 │
 ├── gui_app.py                # Tkinter GUI application
-├── run.py                    Run the CLI program
+├── run.py                    # Run the CLI program
 ├── tests/                   
 │   ├── test_caesar.py
 │   ├── test_symmetric.py
