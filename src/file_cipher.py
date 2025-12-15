@@ -6,6 +6,7 @@ class FileCipher:
     def generate_key(self):
         """Generate a new Fernet key."""
         return Fernet.generate_key()
+
     def encrypt_file(self, filepath, key):
         """Encrypt a file using Fernet symmetric encryption and delete the original."""
         cipher = Fernet(key)
